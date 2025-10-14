@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Film Interstellar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 30px;
+    }
+    .container {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🎬 Detail Film</h2>
+    <p><strong>Sutradara:</strong> <span id="sutradara"></span></p>
+    <p><strong>Genre kedua:</strong> <span id="genreKedua"></span></p>
+    <h3>Informasi Lengkap:</h3>
+    <pre id="detailFilm"></pre>
+  </div>
+
+  <script>
+    // Objek film seperti di tugas
+    const film = {
+      judul: "Interstellar",
+      tahunRilis: 2014,
+      sutradara: "Christopher Nolan",
+      genre: ["Sci-Fi", "Adventure", "Drama"],
+
+      tampilkanDetail: function() {
+        return `Judul: ${this.judul}
+Tahun Rilis: ${this.tahunRilis}
+Sutradara: ${this.sutradara}
+Genre: ${this.genre.join(", ")}`;
+      }
+    };
+
+    // Tampilkan data ke halaman web (bukan console)
+    document.getElementById("sutradara").textContent = film.sutradara;
+    document.getElementById("genreKedua").textContent = film.genre[1];
+    document.getElementById("detailFilm").textContent = film.tampilkanDetail();
+  </script>
+</body>
+</html>
